@@ -25,7 +25,7 @@ with open('bases/logradouro_aproximado.csv', newline='', encoding='utf-8') as cs
 
 """ google maps """
 
-geolocator = GoogleV3('AIzaSyBASZ1tfUIL7XMmIGU6Ksy0zUINeSkSVRM')
+geolocator = GoogleV3('nonononono')
 
 linhas_google_maps = []
 
