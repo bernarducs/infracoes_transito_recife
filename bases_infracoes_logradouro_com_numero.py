@@ -25,7 +25,7 @@ with open('bases/bases_tratadas/logradouro_com_numero.csv', newline='', encoding
 
 """ google\bing maps """
 
-geolocator = Bing('AgltPX-4DEBV6h_G9Hm_hNEyXq-Qrg_09E0rCUeaCejSIHYOfgZbB_yQMKePv9-J')
+geolocator = Bing('token')
 
 linhas_google_maps = []
 
