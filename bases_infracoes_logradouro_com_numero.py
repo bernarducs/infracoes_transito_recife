@@ -1,6 +1,7 @@
 import csv
 import agate
 from geopy.geocoders import Bing
+from funcoes import retorna_ultima_linha_gravada
 
 """ tabela com infracoes tendo os endereços com numeros """
 
@@ -23,16 +24,20 @@ with open('bases/bases_tratadas/logradouro_com_numero.csv', newline='', encoding
     for row in dados_obj:
         base.append(row)
 
-""" google\bing maps """
+""" recupera a ultima linha salva """
 
-geolocator = Bing('token')
+ult_linha = retorna_ultima_linha_gravada('tab_infracoes_log_com_numero')
+
+""" google \ bing maps """
+
+geolocator = Bing('AgltPX-4DEBV6h_G9Hm_hNEyXq-Qrg_09E0rCUeaCejSIHYOfgZbB_yQMKePv9-J')
 
 linhas_google_maps = []
 
-with open('bases/bases_finalizadas/tab_infracoes_log_com_numero.csv', 'w', newline='\n') as csvfile:
+with open('bases/bases_finalizadas/tab_infracoes_log_com_numero.csv', 'a', newline='\n') as csvfile:
     writer = csv.writer(csvfile, lineterminator='\n')
-    for row in base[0:9500]:
-        local = geolocator.geocode(row[10], exactly_one=True, timeout=5)
+    for row in base[ult_linha:]:
+        local = geolocator.geocode(row[10], exactly_one=True, timeout=10)
         if local:
             row.extend([local.latitude, local.longitude])
             linhas_google_maps.append(row)
