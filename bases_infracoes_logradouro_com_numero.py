@@ -30,7 +30,7 @@ ult_linha = retorna_ultima_linha_gravada('tab_infracoes_log_com_numero')
 
 """ google \ bing maps """
 
-geolocator = Bing('AgltPX-4DEBV6h_G9Hm_hNEyXq-Qrg_09E0rCUeaCejSIHYOfgZbB_yQMKePv9-J')
+geolocator = Bing('Agltq-Qrg_09E0rCUeaCejSIHYOfgZbB_yQMKePv9-J')
 
 linhas_google_maps = []
 
