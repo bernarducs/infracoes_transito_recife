@@ -41,3 +41,13 @@ def formata_endereco(linhas):
     }
 
     return dict
+
+
+def retorna_ultima_linha_gravada(base):
+
+    with open('bases/bases_finalizadas/' + base + '.csv', newline='') as csvfile:
+        dados_obj = csv.reader(csvfile, delimiter=',')
+        ult_linha = len(list(dados_obj))
+        ult_linha += 1
+
+    return ult_linha
