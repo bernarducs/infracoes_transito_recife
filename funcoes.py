@@ -1,4 +1,5 @@
 import re
+import csv, sys
 
 def formata_endereco(linhas):
 
